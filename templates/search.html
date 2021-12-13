@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .searchmain .search-form {
+    position: relative;
+    float: right;
+    width: 865px;
+}
+        .searchmain .input-box {
+    width: 765px;
+    height: 50px;
+    margin-bottom: 24px;
+    background-color: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,.3);
+    -ms-box-shadow: 0 2px 4px rgba(0,0,0,.3);
+    -o-box-shadow: 0 2px 4px rgba(0,0,0,.3);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+}
+        .searchmain .sort {
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 120px;
+    height: 50px;
+    font-size: 14px;
+    color: #072958;
+}
+        .sort-default {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    background: url(https://piccache.cnki.net/kdn/index/kns8/nimages/icon-sort.png) no-repeat right top;
+}
+        .sort span {
+    padding-right: 2px;
+    margin-right: 0;
+    text-align: right;
+    color: #010101;
+    white-space: nowrap;
+}
+        .searchmain .search-input {
+    float: left;
+    width: 555px;
+    height: 20px;
+    padding: 15px 0 15px 20px;
+    font-size: 14px;
+    color: #7d7d7d;
+    line-height: 20px;
+    border: none;
+    background-color: #fff;
+}
+        .searchmain .search-btn {
+    float: right;
+    width: 68px;
+    height: 50px;
+    border: none;
+    border-radius: 0 2px 2px 0;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    cursor: pointer;
+}
+.searchmain .search-btn {
+    background-image: url(https://piccache.cnki.net/kdn/index/kns8/nimages/btn-search1.png);
+}
+.sort-list {
+    position: absolute;
+    display: none;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    white-space: nowrap;
+    -o-box-shadow: 0 2px 3px rgba(0,0,0,.1);
+    -ms-box-shadow: 0 2px 3px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+    box-shadow: 0 2px 3px rgb(0 0 0 / 10%);
+}
+.sort-list li {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+.sort-list ul a {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+.sort-list .cur a, .sort-list .cur a:hover {
+    background-color: #6698FD;
+    color: #fff;
+}
+.sort:hover .sort-list{
+    display: block;
+}
+.sort-list ul {
+    display: inline-block;
+    min-width: 118px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+.sort-default {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    background: url(https://piccache.cnki.net/kdn/index/kns8/nimages/icon-sort.png) no-repeat right top;
+}
+.sort-list ul a {
+    display: block;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+.sort span {
+    padding-right: 2px;
+    margin-right: 0;
+    text-align: right;
+    color: #010101;
+    white-space: nowrap;
+}
+
+    </style>
+</head>
+<body>
+<div class="searchmain">
+<div class="search-form">
+                <input type="hidden" id="curdbcode" name="curdbcode" value="SCDB">
+                <input type="hidden" id="txt_sug" name="txt_sug" value="主题">
+                <div class="input-box">
+                    <div class="sort reopt" id="DBFieldBox" style="display: block">
+                        <div class="sort-default">
+                            <span>主题</span>
+                            <i class="sort-icon">▼</i>
+                        </div>
+                        <div id="DBFieldList" class="sort-list" style="">
+                            <ul>
+                                <li class="cur" val="0" field="SU$%=|"><a href="javascript:void(0);">主题</a></li>
+                                <li val="1" field="KY$=|"><a href="javascript:void(0);">关键词</a></li>
+                                <li val="2" field="TI$%=|"><a href="javascript:void(0);">篇名</a></li>
+                                <li val="3" field="FT$%=|"><a href="javascript:void(0);">全文</a></li>
+                                <li val="4" field="AU$=|"><a href="javascript:void(0);">作者</a></li>
+                                <li val="5" field="AF$%"><a href="javascript:void(0);">单位</a></li>
+                                <li val="6" field="AB$%=|"><a href="javascript:void(0);">摘要</a></li>
+                                <li val="7" field="RF$%=|"><a href="javascript:void(0);">被引文献</a></li>
+                                <li val="8" field="CLC$=|??"><a href="javascript:void(0);">中图分类号</a></li>
+                                <li val="9" field="LY$%=|"><a href="javascript:void(0);">文献来源</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--sort-->
+                    <input class="search-input" id="txt_SearchText" name="txt_SearchText" type="text" autocomplete="off" placeholder="中文文献、外文文献" value="" maxlength="100" style="color: rgb(125, 125, 125);">
+                    <input class="search-btn" type="button" value="">
+                </div>
+                <!--input-box-->
+
+
+                <div class="option-list">
+
+
+                </div>
+            </div>
+    </div>
+</body>
+</html>
