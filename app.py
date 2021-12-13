@@ -73,3 +73,11 @@ def music():
     num = db.getNum()
     page_range = range(max(1,int(page)-1), (min(int((num-1)/pageNum)+2,int(page) + 2)))
     return render_template('music.html', items=items, page=int(page), prange=page_range)
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/registered')
+def registered():
+    return render_template('registered.html')
