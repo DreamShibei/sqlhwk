@@ -5358,6 +5358,10 @@ a.bg-dark:focus, a.bg-dark:hover {
   justify-content: center !important;
 }
 
+.justify-content-top {
+  padding-top: 10vw !important;
+}
+
 .justify-content-between {
   justify-content: space-between !important;
 }
@@ -5367,7 +5371,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .align-items-start {
-  align-items: flex-start !important;
+  padding-top: 11vw;
 }
 
 .align-items-end {
